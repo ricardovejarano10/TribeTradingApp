@@ -26,7 +26,7 @@ export class CompoundPage {
   calcularCompound(p:number, i:number, c:number) {
     this.resultados = [];
     this.comp.calculo(p,i,c);
-    const myModal = this.modal.create(ModalCompoundPage);
+    const myModal = this.modal.create(ModalCompoundPage, { porcentaje: p, inversion:i, compound:c });
     myModal.present();
    // this.navCtrl.push(HistorialPage);
    // console.log(this.resultados);

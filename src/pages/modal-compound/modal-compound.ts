@@ -8,8 +8,14 @@ import { CompoundingProvider } from '../../providers/compounding/compounding';
 })
 export class ModalCompoundPage {
   resultados;
+  porcentaje;
+  inversion;
+  compound;
   constructor(private view:ViewController,public navCtrl: NavController, public navParams: NavParams, public comp: CompoundingProvider) {
     this.resultados = this.comp.log;
+    this.porcentaje = this.navParams.get('porcentaje');
+    this.inversion = this.navParams.get('inversion');
+    this.compound = this.navParams.get('compound');
   }
 
   ionViewDidLoad() {
