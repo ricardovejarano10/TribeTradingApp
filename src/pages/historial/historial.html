@@ -1,4 +1,20 @@
 <ion-content padding>
-        
 
+    <div text-center><h1>Éste es actualmente tu plan!!</h1></div>
+
+    <div text-center margin-top>
+            <h3>Porcentaje del broker: {{porcentaje}}%</h3>
+            <h3>Inversion inicial: {{inversion}}€</h3>
+            <h3>Numero de compounds {{compound}}</h3>
+          </div>
+
+    <div *ngFor="let valor of valores" text-center>
+        <ion-grid class="grid">
+            <ion-row>
+                <ion-col col-12>
+                    <h2>{{valor}}</h2>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+    </div>
 </ion-content>
