@@ -28,7 +28,5 @@ export class CompoundPage {
     this.comp.calculo(p,i,c);
     const myModal = this.modal.create(ModalCompoundPage, { porcentaje: p, inversion:i, compound:c });
     myModal.present();
-   // this.navCtrl.push(HistorialPage);
-   // console.log(this.resultados);
   }
 }

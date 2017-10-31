@@ -9,11 +9,12 @@
 
 </ion-header>
 
-
 <ion-content padding>
-  <h3>Porcentaje del broker: {{porcentaje}}</h3>
-  <h3>Inversion inicial: {{inversion}}</h3>
-  <h3>Numero de compounds {{compound}}</h3>
+  <div text-center margin-top>
+    <h3>Porcentaje del broker: {{porcentaje}}%</h3>
+    <h3>Inversion inicial: {{inversion}}€</h3>
+    <h3>Numero de compounds {{compound}}</h3>
+  </div>
   <div *ngFor="let resultado of resultados" text-center>
     <ion-grid class="grid">
       <ion-row>
