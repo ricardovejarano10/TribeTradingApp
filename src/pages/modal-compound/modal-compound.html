@@ -3,13 +3,21 @@
   <ion-navbar color="primary">
     <ion-title>Compound</ion-title>
     <ion-buttons end>
-        <button ion-button (click)="cerrarModal()">cerrar</button>
-      </ion-buttons>
+      <button ion-button (click)="cerrarModal()">cerrar</button>
+    </ion-buttons>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
-    <h2 *ngFor="let resultado of resultados">{{resultado}}</h2>
+  <div *ngFor="let resultado of resultados" text-center>
+    <ion-grid class="grid">
+      <ion-row>
+        <ion-col col-12>
+          <h2>{{resultado}}</h2>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
 </ion-content>
