@@ -1,3 +1,25 @@
 <ion-content padding>
 
+    <form #form="ngForm">
+        <ion-row margin-bottom>
+
+            <ion-item ion-col col-12 col-md-6>
+                <ion-label floating>Porcentaje Broker</ion-label>
+                <ion-input [(ngModel)]="porcentaje" name="porcentaje" type="number" min="0" required></ion-input>
+            </ion-item>
+
+            <ion-item ion-col col-12 col-md-6>
+                <ion-label floating>Inversión inicial</ion-label>
+                <ion-input [(ngModel)]="inversion" name="inversion" type="number" required></ion-input>
+            </ion-item>
+
+            <ion-item ion-col col-12 col-md-6>
+                <ion-label floating>Compounds</ion-label>
+                <ion-input [(ngModel)]="compounds" name="compounds" type="number" max="9" required></ion-input>
+            </ion-item>
+
+        </ion-row>
+    </form>
+    <button ion-col col-6 offset-3 (click)="calcularCompound(porcentaje,inversion,compounds)" margin-top ion-button color="primary">Calcular</button>
+
 </ion-content>

@@ -1,0 +1,15 @@
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>Compound</ion-title>
+    <ion-buttons end>
+        <button ion-button (click)="cerrarModal()">cerrar</button>
+      </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <h2 *ngFor="let resultado of resultados">{{resultado}}</h2>
+</ion-content>

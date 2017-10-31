@@ -11,6 +11,8 @@ import { HistorialPage } from '../pages/historial/historial';
 import { OperativaPage } from '../pages/operativa/operativa';
 import { CompoundPage } from '../pages/compound/compound';
 import { TabsPage } from '../pages/tabs/tabs';
+import { CompoundingProvider } from '../providers/compounding/compounding';
+import { ModalCompoundPage } from '../pages/modal-compound/modal-compound';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,8 @@ import { TabsPage } from '../pages/tabs/tabs';
     HistorialPage,
     OperativaPage,
     CompoundPage,
-    TabsPage
+    TabsPage,
+    ModalCompoundPage
   ],
   imports: [
     BrowserModule,
@@ -32,12 +35,14 @@ import { TabsPage } from '../pages/tabs/tabs';
     HistorialPage,
     OperativaPage,
     CompoundPage,
-    TabsPage
+    TabsPage,
+    ModalCompoundPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    CompoundingProvider
   ]
 })
 export class AppModule {}

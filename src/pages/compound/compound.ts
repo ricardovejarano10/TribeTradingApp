@@ -1,12 +1,8 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
-
-/**
- * Generated class for the CompoundPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import { NavController, NavParams, ModalController } from 'ionic-angular';
+import { CompoundingProvider } from '../../providers/compounding/compounding';
+import { HistorialPage } from '../historial/historial';
+import { ModalCompoundPage } from '../modal-compound/modal-compound';
 
 @Component({
   selector: 'page-compound',
@@ -14,11 +10,25 @@ import { NavController, NavParams } from 'ionic-angular';
 })
 export class CompoundPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  compounds: any;
+  res:any;
+  resultados;
+  constructor(public navCtrl: NavController, private modal:ModalController,
+    public navParams: NavParams, public comp: CompoundingProvider) {
+    this.resultados = this.comp.log;
+    console.log(this.resultados);
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad CompoundPage');
   }
 
+  calcularCompound(p:number, i:number, c:number) {
+    this.resultados = [];
+    this.comp.calculo(p,i,c);
+    const myModal = this.modal.create(ModalCompoundPage);
+    myModal.present();
+   // this.navCtrl.push(HistorialPage);
+   // console.log(this.resultados);
+  }
 }
